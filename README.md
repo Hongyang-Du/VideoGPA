@@ -5,19 +5,6 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 ## 🎬 Visual Comparisons
 
 
-<video src="assests/videos/i2v/0032cd2f.mp4" width="100%" controls></video>
-
-<details>
-  <summary><b>Prompt:</b> The video features a tranquil outdoor setting with a collection of rustic... (Click to expand)</summary>
-  <br>
-  <blockquote>
-    The video features a tranquil outdoor setting with a collection of rustic wooden barrels, baskets, and containers filled with colorful yarns, gourds, pumpkins, and other autumnal decorations. The display, set against a backdrop of trees with autumn leaves, creates a serene atmosphere. Signs provide context, suggesting the area is a park or garden dedicated to the arts and crafts of textile creation. The scene evolves subtly, with the addition of a metal teapot and a green pumpkin, enhancing the rustic charm. The video concludes with a focus on the yarns and pumpkins, inviting visitors to engage with the art of knitting.
-  </blockquote>
-</details>
-
-<br>
-<br>
-
 <video src="assests/videos/i2v/00713c8c.mp4" width="100%" controls></video>
 
 <details>
@@ -25,19 +12,6 @@ VideoGPA is a video generation quality assessment and optimization framework wit
   <br>
   <blockquote>
     The video takes us through a department store's Halloween section, showcasing a variety of festive decorations. Initially, the store is empty, but as we move through the aisles, we see Halloween-themed items like candles, ornaments, and kitchenware. The decorations are arranged on wooden tables and shelves, with a color scheme of black, orange, and white. Some items feature playful phrases like 'BOO', 'BOOZE', and 'HOME SWEET HALLOWEEN'. The store is well-lit, with a warm ambiance, and the decorations include ghost figures, pumpkins, and bats, creating a cozy, celebratory atmosphere.
-  </blockquote>
-</details>
-
-<br>
-<br>
-
-<video src="assests/videos/i2v/010533f2.mp4" width="100%" controls></video>
-
-<details>
-  <summary><b>Prompt:</b> The video takes place in a well-lit industrial workshop with a focus... (Click to expand)</summary>
-  <br>
-  <blockquote>
-    The video takes place in a well-lit industrial workshop with a focus on bus maintenance. Initially, a blue and white hydraulic lift is central, with a red banner and a bus under maintenance. The scene shifts to show the lift with a control panel, a red banner with Chinese characters, and a bus with a damaged front end. Various equipment like a manual pallet jack, a red fire extinguisher, and a wooden bench appear, indicating ongoing work. A technician is seen working on a bus, with tools and parts scattered around. The workshop is equipped with multiple lifts, a forklift, and a bus undergoing repair, with a red banner and a sign with Chinese characters visible. The video concludes with a still scene of the workshop, highlighting the bus and the mechanical equipment.
   </blockquote>
 </details>
 
@@ -57,18 +31,6 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="assests/videos/i2v/022b2aef.mp4" width="100%" controls></video>
-
-<details>
-  <summary><b>Prompt:</b> The video features a series of bronze statues in a park, each... (Click to expand)</summary>
-  <br>
-  <blockquote>
-    The video features a series of bronze statues in a park, each depicting an adult and a child in various intimate moments, suggesting a theme of guardianship and learning. The statues are set against a backdrop of a wooden bridge, lush greenery, and a clear sky, with a pathway leading to the bridge. The scenes are tranquil, with no people present, and the soft lighting indicates it might be early morning or late afternoon. The presence of a logo in some frames hints at an association with a media outlet or organization.
-  </blockquote>
-</details>
-
-<br>
-<br>
 
 <video src="assests/videos/i2v/02881907.mp4" width="100%" controls></video>
 
@@ -103,19 +65,6 @@ VideoGPA is a video generation quality assessment and optimization framework wit
   <br>
   <blockquote>
     The video explores a traditional Chinese museum, starting with a display case of golden figurines and moving through various historical exhibits, including a lion statue, a model of an ancient Chinese city, and a human skeleton with tools. The museum features a high ceiling with wooden beams, stone columns, and bamboo wall panels, with soft lighting enhancing the cultural ambiance. Textual information in Chinese is visible, suggesting an educational purpose. The scenes transition from a serene, well-preserved interior to a more somber, reflective atmosphere with a display case of golden artifacts and a model of a historical battle scene, all under a warm glow.
-  </blockquote>
-</details>
-
-<br>
-<br>
-
-<video src="assests/videos/i2v/0602fa4d.mp4" width="100%" controls></video>
-
-<details>
-  <summary><b>Prompt:</b> The video features a tranquil lakeside scene with a wooden boardwalk leading... (Click to expand)</summary>
-  <br>
-  <blockquote>
-    The video features a tranquil lakeside scene with a wooden boardwalk leading to a gazebo, surrounded by lotus flowers and aquatic plants. The calm waters reflect the soft glow of the sun, either rising or setting, and the hazy skyline of a city with modern skyscrapers. The scene is serene, with no people or wildlife, and the lighting suggests it's either early morning or late afternoon. As time passes, the sky transitions from pale blue to warm orange, and the city's silhouette becomes more pronounced against the natural backdrop. The video captures the peaceful coexistence of nature and urban life.
   </blockquote>
 </details>
 
@@ -200,18 +149,6 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="assests/videos/i2v/0a78c25f.mp4" width="100%" controls></video>
-
-<details>
-  <summary><b>Prompt:</b> A traditional Chinese-style wooden gazebo with a curved roof and ornate latticework... (Click to expand)</summary>
-  <br>
-  <blockquote>
-    A traditional Chinese-style wooden gazebo with a curved roof and ornate latticework is situated in a well-maintained park, surrounded by lush greenery and a winding brick pathway. The scene is tranquil, with a tennis court visible in the background, suggesting a recreational setting. As time passes, the gazebo remains a focal point, with the surrounding trees and the pathway leading to it. The lighting indicates it might be early morning or late afternoon. A modern trash bin with a red and black design appears, indicating an emphasis on cleanliness. The park is serene, with no people or animals present.
-  </blockquote>
-</details>
-
-<br>
-<br>
 
 <video src="assests/videos/i2v/0c6f5d61.mp4" width="100%" controls></video>
 
@@ -239,18 +176,6 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="assests/videos/i2v/0de066d5.mp4" width="100%" controls></video>
-
-<details>
-  <summary><b>Prompt:</b> The video shows a warehouse with metal shelves initially empty, with a... (Click to expand)</summary>
-  <br>
-  <blockquote>
-    The video shows a warehouse with metal shelves initially empty, with a yellow 'Y' sign and a ladder suggesting recent activity. As time passes, the shelves are seen stocked with car batteries, and a hand truck appears, indicating ongoing work. The warehouse is well-lit, with a red wall and a pallet jack, but no workers are visible. The shelves are neatly organized, and a pallet jack is present, suggesting movement of goods. A black curtain partially conceals the shelves, and a red curtain adds a dramatic flair. The scene is quiet, with a few batteries and a pallet jack, and a red curtain partially veils the shelves, with a few batteries and a pallet jack, and a sign reading 'AUTO PARTS' in the background.
-  </blockquote>
-</details>
-
-<br>
-<br>
 
 <video src="assests/videos/i2v/114adf5c.mp4" width="100%" controls></video>
 
@@ -304,31 +229,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="assests/videos/i2v/171069b4.mp4" width="100%" controls></video>
 
-<details>
-  <summary><b>Prompt:</b> The video features a tranquil outdoor fitness park with a concrete pathway,... (Click to expand)</summary>
-  <br>
-  <blockquote>
-    The video features a tranquil outdoor fitness park with a concrete pathway, metal benches, and solar-paneled exercise equipment. The park is surrounded by lush greenery and multi-story residential buildings, creating a serene urban oasis. As time passes, the scene remains largely unchanged, with the addition of a solitary figure walking in the distance and a small dog appearing, adding life to the peaceful setting. The park is well-maintained, with a grassy area and a central pathway leading to a bench, all under a soft, overcast sky. The presence of a watermark suggests the footage may be from a specific location or project.
-  </blockquote>
-</details>
-
-<br>
-<br>
-
-<video src="assests/videos/i2v/17281837.mp4" width="100%" controls></video>
-
-<details>
-  <summary><b>Prompt:</b> The video features a traditional Chinese pavilion with a multi-tiered roof and... (Click to expand)</summary>
-  <br>
-  <blockquote>
-    The video features a traditional Chinese pavilion with a multi-tiered roof and ornate eaves, set in a tranquil outdoor setting with a white marble floor and a white tent to the left. The pavilion is adorned with red and white lanterns, and the scene is bathed in the warm glow of the sun, suggesting a serene atmosphere. As time passes, the setting remains largely unchanged, with the addition of a white canopy and a modern building in the background, indicating a blend of historical and contemporary elements. The presence of a solitary figure and a bicycle adds life to the scene.
-  </blockquote>
-</details>
-
-<br>
-<br>
 
 <video src="assests/videos/i2v/17831e0e.mp4" width="100%" controls></video>
 
