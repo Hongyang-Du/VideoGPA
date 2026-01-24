@@ -4,7 +4,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 
 ## 🎬 Visual Comparisons
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/00713c8c.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/00713c8c.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video takes us through a department store's Halloween section, showcasing a...</summary>
@@ -17,7 +17,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/01c4ec98.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/01c4ec98.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video shows a series of residential scenes in Westerville, OH, focusing...</summary>
@@ -30,7 +30,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/02881907.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/02881907.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video features a serene and culturally rich setting, showcasing a traditional...</summary>
@@ -43,7 +43,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/036b0f4b.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/036b0f4b.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video features a serene urban setting with a red and black...</summary>
@@ -56,7 +56,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/04603070.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/04603070.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video explores a traditional Chinese museum, starting with a display case...</summary>
@@ -69,7 +69,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/07439544.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/07439544.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video takes us through a well-lit warehouse filled with shelves stocked...</summary>
@@ -82,7 +82,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/074b6597.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/074b6597.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video takes place in a modern furniture store, showcasing a variety...</summary>
@@ -95,7 +95,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/0777b243.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/0777b243.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video explores a modern building's interior, starting with a view of...</summary>
@@ -108,7 +108,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/07d469b7.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/07d469b7.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video features a serene urban park with a large, round concrete...</summary>
@@ -121,7 +121,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/0a415152.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/0a415152.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video features a tranquil park with a variety of trees, including...</summary>
@@ -134,7 +134,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/0a6c01ac.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/0a6c01ac.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video features a series of vending machines in an airport terminal,...</summary>
@@ -147,7 +147,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/0c6f5d61.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/0c6f5d61.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video takes us through a vibrant video game store, starting with...</summary>
@@ -160,7 +160,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/0c7c65cc.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/0c7c65cc.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video features an outdoor dining area with a black metal truss...</summary>
@@ -173,7 +173,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/114adf5c.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/114adf5c.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video takes place in a well-lit indoor corridor with a polished...</summary>
@@ -186,7 +186,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/135fc2a1.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/135fc2a1.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video features a modern glass building with a reflective facade, situated...</summary>
@@ -199,7 +199,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/14eb48a5.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/14eb48a5.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video takes viewers through a furniture store, showcasing a variety of...</summary>
@@ -212,7 +212,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/169bb020.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/169bb020.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video features a series of pirate-themed amusement rides in an outdoor...</summary>
@@ -225,7 +225,7 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 <br>
 <br>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assests/videos/i2v/17831e0e.mp4" width="100%" controls preload="metadata"></video>
+<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/17831e0e.mp4" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video features a serene garden with a central pond, surrounded by...</summary>
