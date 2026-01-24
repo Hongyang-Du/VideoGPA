@@ -14,8 +14,8 @@ VideoGPA is a video generation quality assessment and optimization framework wit
   </blockquote>
 </details>
 
-<video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/01c4ec98.mp4" width="100%" controls preload="metadata"></video>
 
+<video src="https://github.com/user-attachments/assets/bde9f8cf-5943-4d2c-b226-bcc331047a5a" width="100%" controls preload="metadata"></video>
 <details>
   <summary><b>Prompt:</b> The video shows a series of residential scenes in Westerville, OH, focusing...</summary>
   <br>
