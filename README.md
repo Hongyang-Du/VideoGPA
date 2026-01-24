@@ -4,23 +4,15 @@ VideoGPA is a video generation quality assessment and optimization framework wit
 
 ## 🎬 Visual Comparisons
 
-<video src="[https://github.com/user-attachments/assets/[unique-id]](https://github.com/user-attachments/assets/2881480c-089e-4613-b649-50d5fbaf3bc0)">
-
+<video src="https://github.com/user-attachments/assets/2881480c-089e-4613-b649-50d5fbaf3bc0" width="100%" controls preload="metadata"></video>
 
 <details>
   <summary><b>Prompt:</b> The video takes us through a department store's Halloween section, showcasing a...</summary>
   <br>
   <blockquote>
-    The video takes us through a department store's Halloween section, showcasing a variety of festive decorations. Initially, the store is empty, but as we move through the aisles, we see Halloween-them
-
-Uploading 0a6c01ac.mp4…
-
-ed items like candles, ornaments, and kitchenware. The decorations are arranged on wooden tables and shelves, with a color scheme of black, orange, and white. Some items feature playful phrases like 'BOO', 'BOOZE', and 'HOME SWEET HALLOWEEN'. The store is well-lit, with a warm ambiance, and the decorations include ghost figures, pumpkins, and bats, creating a cozy, celebratory atmosphere.
+    The video takes us through a department store's Halloween section, showcasing a variety of festive decorations...
   </blockquote>
 </details>
-
-<br>
-<br>
 
 <video src="https://raw.githubusercontent.com/Hongyang-Du/VideoGPA/main/assets/videos/i2v/01c4ec98.mp4" width="100%" controls preload="metadata"></video>
 
