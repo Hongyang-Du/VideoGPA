@@ -179,9 +179,6 @@ Edit these values in the scripts to adjust generation quality and diversity.
 </details>
 
 
-
-
-
 <video src="https://github.com/user-attachments/assets/0cd77642-065b-4998-9dab-8c7e6f215282" width="100%" controls preload="metadata"></video>
 <details>
   <summary><b>Prompt:</b> Outdoor dining area with black canopy and red cushioned chairs...</summary>
@@ -237,10 +234,6 @@ Edit these values in the scripts to adjust generation quality and diversity.
    The video features a serene urban setting with a red and black abstract sculpture on a concrete base, surrounded by modern buildings and a clear blue sky. As time passes, the scene includes a cherry picker, a 'Parkway' sign, and a 'Downtown' sign, suggesting maintenance or installation activities. The sculpture's dynamic design contrasts with the tranquil environment. A cherry picker lifts a street sign, and a 'Parkway' sign is visible. The cityscape is quiet, with no people, and a 'Chase' building is seen in the background. The video concludes with a 'PARK' sign and a 'Chase' building, with a cherry picker indicating maintenance work.
   </blockquote>
 </details>
-
-
-https://github.com/user-attachments/assets/9c75949c-1aeb-4239-8184-afb5ee09dfd4
-
 
 <video src="https://github.com/user-attachments/assets/9c75949c-1aeb-4239-8184-afb5ee09dfd4" width="100%" controls preload="metadata"></video>
 <details>
