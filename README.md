@@ -290,10 +290,6 @@ https://github.com/user-attachments/assets/9c75949c-1aeb-4239-8184-afb5ee09dfd4
   </blockquote>
 </details>
 
-
-https://github.com/user-attachments/assets/2472430f-f2bb-4608-9b1f-03c141c5dc2b
-
-
 <video src="https://github.com/user-attachments/assets/2472430f-f2bb-4608-9b1f-03c141c5dc2b" width="100%" controls preload="metadata"></video>
 <details>
   <summary><b>Prompt:</b>   Traditional Chinese tea room with elegant furniture and ceramic decor...</summary>
@@ -312,11 +308,6 @@ https://github.com/user-attachments/assets/2472430f-f2bb-4608-9b1f-03c141c5dc2b
    The video explores a traditional Chinese museum, starting with a display case of golden figurines and moving through various historical exhibits, including a lion statue, a model of an ancient Chinese city, and a human skeleton with tools. The museum features a high ceiling with wooden beams, stone columns, and bamboo wall panels, with soft lighting enhancing the cultural ambiance. Textual information in Chinese is visible, suggesting an educational purpose. The scenes transition from a serene, well-preserved interior to a more somber, reflective atmosphere with a display case of golden artifacts and a model of a historical battle scene, all under a warm glow.
   </blockquote>
 </details>
-
-
-
-
-
 
 <video src="https://github.com/user-attachments/assets/96141bb4-5874-4101-8596-e5ce2a9d0b77" width="100%" controls preload="metadata"></video>
 <details>
