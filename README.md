@@ -10,10 +10,34 @@ Both scripts support loading **LoRA adapters** for customized generation.
 
 ## 📋 Requirements
 
-Make sure you have the required Python libraries installed:
+Please make sure your Python version is between 3.10 and 3.12, inclusive of both 3.10 and 3.12.
 
 ```bash
-pip install torch diffusers transformers peft accelerate huggingface_hub
+pip install -r requirements.txt
+```
+## 🔘 Checkpoint Download 
+
+### Automatic Download (Recommended)
+#### Method 1: Using the Download Script
+Run the provided Python script to automatically download all checkpoint files:
+```bash
+python download_checkpoints.py
+```
+
+The script will:
+- ✅ Check if files already exist (skip re-downloading)
+- 🚀 Download missing checkpoints with progress bars
+- 📁 Organize files into the correct directory structure
+- ⚡ Resume failed downloads automatically
+
+### Expected Directory Structure
+After successful download, your checkpoints folder should look like:
+```
+checkpoints/
+├── VideoGPA-I2V-lora/
+│   └── adapter_model.safetensors
+└── VideoGPA-T2V-lora/
+    └── adapter_model.safetensors
 ```
 
 ## 📝 Available Scripts
@@ -58,7 +82,7 @@ python i2v_inference.py "The camera slowly zooms in" ./path/to/image.jpg
 
 **Advanced Usage:**
 ```bash
-python i2v_inference.py "Camera pans from left to right" ./input_image.png \
+python i2v_inference.py "A realistic continuation of the reference scene. Everything must remain completely static: no moving people, no shifting objects, and no dynamic elements. Only the camera is allowed to move. Render physically accurate multi-step camera motion.  Camera motion: roll gently to one side, then swing around the room, followed by push forward into the scene." ./image.png \
     --output_dir ./i2v_outputs \
     --lora_path ./checkpoints/i2v_lora \
     --gpu_id 1
@@ -82,28 +106,16 @@ Both scripts include configurable generation parameters:
 ```python
 NUM_INFERENCE_STEPS = 50  # Number of diffusion steps
 GUIDANCE_SCALE = 6.0      # Classifier-free guidance scale
-SEEDS = [42]              # Random seeds for generation
+SEED = 42              # Seed for generation
 ```
 
-Edit these values in the scripts to adjust generation quality and diversity.
-
-## 🎯 Key Features
-
-- **Automatic Model Download**: Models automatically download from HuggingFace if not found locally
-- **LoRA Support**: Load and merge LoRA adapters for customized generation
-- **Memory Optimization**: VAE tiling and slicing enabled for efficient GPU memory usage
-- **Smart File Handling**: Automatically skips existing output files
-- **Multi-seed Generation**: Generate multiple variations by configuring the `SEEDS` list
 
 ## 💾 GPU Memory Requirements
 
-- **Minimum VRAM**: ~16GB for base models
-- **Recommended VRAM**: 24GB+ for smooth generation
+- **Minimum VRAM**: diffusers BF16 ~5GB for base models 
 - Memory optimizations (VAE tiling/slicing) are automatically enabled
 
 ## 🎬 Visual Comparisons
-
-
 
 <video src="https://github.com/user-attachments/assets/40bfebaf-365c-48f0-90dc-ee574228024a" width="100%" controls preload="metadata"></video>
 <details>

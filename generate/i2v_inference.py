@@ -16,7 +16,7 @@ DEFAULT_LORA_PATH = None
 # Generation parameters
 NUM_INFERENCE_STEPS = 50
 GUIDANCE_SCALE = 6.0
-SEEDS = [42] 
+SEED = 42 
 
 def check_and_download_model(model_path):
     """
@@ -99,31 +99,28 @@ def generate_video(args):
     output_path.mkdir(parents=True, exist_ok=True)
 
     # 5. Inference Loop
-    for seed in SEEDS:
-        # Create a safe filename
-        image_name = Path(args.image_path).stem
-        file_name = f"{image_name}_seed{seed}.mp4"
-        out_file = output_path / file_name
-        
-        if out_file.exists():
-            print(f"⏭️  Skipping existing file: {file_name}")
-            continue
+    image_name = Path(args.image_path).stem
+    file_name = f"{image_name}_seed{SEED}.mp4"
+    out_file = output_path / file_name
 
-        print(f"🎨 Generating seed {seed}...")
+    if out_file.exists():
+        print(f"⏭️  Skipping existing file: {file_name}")
+        return
+    print(f"🎨 Generating seed {SEED}...")
         
-        generator = torch.Generator(device=device).manual_seed(seed)
+    generator = torch.Generator(device=device).manual_seed(SEED)
         
-        with torch.inference_mode():
-            video = pipe(
-                prompt=args.prompt,
-                image=image,
-                num_inference_steps=NUM_INFERENCE_STEPS,
-                guidance_scale=GUIDANCE_SCALE,
-                generator=generator,
-            ).frames[0]
+    with torch.inference_mode():
+        video = pipe(
+            prompt=args.prompt,
+            image=image,
+            num_inference_steps=NUM_INFERENCE_STEPS,
+            guidance_scale=GUIDANCE_SCALE,
+            generator=generator,
+        ).frames[0]
         
-        export_to_video(video, str(out_file), fps=8)
-        print(f"✅ Saved video to: {out_file}")
+    export_to_video(video, str(out_file), fps=8)
+    print(f"✅ Saved video to: {out_file}")
 
     # Cleanup
     del pipe

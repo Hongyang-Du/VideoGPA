@@ -16,7 +16,7 @@ DEFAULT_LORA_PATH = None  # Set path here or via CLI if needed
 # Generation parameters
 NUM_INFERENCE_STEPS = 50
 GUIDANCE_SCALE = 6.0
-SEEDS = [42]  # List of seeds to generate
+SEEDS = 42  # List of seeds to generate
 
 def check_and_download_model(model_path):
     """
@@ -89,31 +89,31 @@ def generate_video(prompt, args):
     output_path = Path(args.output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
-    # 4. Inference Loop (iterate through seeds)
-    for seed in SEEDS:
-        # Create a safe filename from the prompt (first 30 chars)
-        safe_prompt = "".join([c for c in prompt if c.isalnum() or c in (' ', '_')]).rstrip()[:30].replace(" ", "_")
-        file_name = f"{safe_prompt}_seed{seed}.mp4"
-        out_file = output_path / file_name
-        
-        if out_file.exists():
-            print(f"⏭️  Skipping existing file: {file_name}")
-            continue
+    # 4. Inference Loop
 
-        print(f"🎨 Generating seed {seed}...")
+    # Create a safe filename from the prompt (first 30 chars)
+    safe_prompt = "".join([c for c in prompt if c.isalnum() or c in (' ', '_')]).rstrip()[:30].replace(" ", "_")
+    file_name = f"{safe_prompt}_seed{SEED}.mp4"
+    out_file = output_path / file_name
         
-        generator = torch.Generator(device=device).manual_seed(seed)
+    if out_file.exists():
+        print(f"⏭️  Skipping existing file: {file_name}")
+        continue
+
+        print(f"🎨 Generating seed {SEED}...")
         
-        with torch.inference_mode():
-            video = pipe(
-                prompt=prompt,
-                num_inference_steps=NUM_INFERENCE_STEPS,
-                guidance_scale=GUIDANCE_SCALE,
-                generator=generator,
-            ).frames[0]
+    generator = torch.Generator(device=device).manual_seed(SEED)
         
-        export_to_video(video, str(out_file), fps=8)
-        print(f"✅ Saved video to: {out_file}")
+    with torch.inference_mode():
+        video = pipe(
+            prompt=prompt,
+            num_inference_steps=NUM_INFERENCE_STEPS,
+            guidance_scale=GUIDANCE_SCALE,
+            generator=generator,
+        ).frames[0]
+        
+    export_to_video(video, str(out_file), fps=8)
+    print(f"✅ Saved video to: {out_file}")
 
     # Cleanup
     del pipe
