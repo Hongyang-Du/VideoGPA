@@ -330,7 +330,7 @@ SEED = 42              # Seed for generation
 - **Multi-Model Support**: Compatible with CogVideoX and other video generation models
 - **Flexible Pipeline**: Easy-to-use inference and training pipelines
 
-## 📁 Project Structure
+## 📁 Code Structure
 
 ```
 VideoGPA/
@@ -342,45 +342,48 @@ VideoGPA/
 └── utils/          # Utility functions
 ```
 
-## 🛠️ Installation
 
+## 🔧 DPO Training (Direct Preference Optimization) 
+
+VideoGPA leverages DPO to optimize video generation quality through preference learning. The training pipeline consists of 3 steps after you have your generated videos. Revise the configs as you need:
+
+#### Step 1: Score Your Generate Videos
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd VideoGPA
-
-# Install dependencies
-pip install -r requirements.txt
+python train_dpo/video_scorer.py
 ```
 
-## 📝 Usage
-
-### Training
-
+#### Step 2: Encode Videos to Latent Space
 ```bash
-# Run DPO training
+# For Text-to-Video models
+python train_dpo/CogVideoX-T2V-5B_lora/02_encode.py
+
+# For Image-to-Video models
+python train_dpo/CogVideoX-I2V-5B_lora/02_encode.py
+```
+
+#### Step 3: Run DPO Training
+```bash
+# Text-to-Video DPO training
 python train_dpo/CogVideoX-T2V-5B_lora/03_train.py
+
+# Image-to-Video DPO training
+python train_dpo/CogVideoX-I2V-5B_lora/03_train.py
 ```
 
-### Inference
+**Key Features:**
+- 🎯 Preference-based learning using winner/loser pairs
+- 🔧 Parameter-efficient fine-tuning with LoRA
+- 📊 Multiple quality metrics support
+- ⚡ Distributed training with PyTorch Lightning
+- 💾 Automatic gradient checkpointing and memory optimization
 
-```bash
-# Generate videos with trained model
-python pipelines/inference.py --model_path <path-to-checkpoint>
-```
+**Data Format:** Training requires JSON metadata containing preference pairs - multiple videos generated from the same prompt with quality scores. See [dataset.py](train_dpo/dataset.py) for details.
 
-## 📊 Metrics
-
-VideoGPA provides comprehensive video quality metrics including:
-- Visual quality assessment
-- Temporal consistency
-- Motion smoothness
-- Prompt alignment
 
 ## 🙏 Acknowledgements
 
 Built on top of CogVideoX and other state-of-the-art video generation models.
 
-## 📄 License
+## 🌟 Citation
+If you find our work helpful, please leave us a star and cite our paper.
 
-[Add your license here]
