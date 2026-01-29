@@ -27,8 +27,8 @@ from peft import LoraConfig, get_peft_model
 # Ensure project custom modules can be found
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
-from dpo_cogvideox.dataset import DPODataset, collate_fn
-from dpo_cogvideox.loss import create_loss_strategy
+from tran_dpo.dataset import DPODataset, collate_fn
+from tran_dpo.loss import create_loss_strategy
 
 # ============================================================================
 # ⭐ Default Configuration
