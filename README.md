@@ -1,7 +1,22 @@
-# VideoGPA
+
+
+<div align="center">
+
+# VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation
+
+**Hongyang Du**<sup>*1,2</sup>  · **Junjie Ye**<sup>*1</sup>· **Xiaoyan Cong**<sup>*2</sup> · **Runhao Li**<sup>1</sup> · **Jingcheng Ni**<sup>2</sup>  
+**Aman Agarwal**<sup>2</sup>  · **Zeqi Zhou**<sup>2</sup> · **Zekun Li**<sup>2</sup>  · **Randall Balestriero**<sup>2</sup> · **Yue Wang**<sup>1</sup>
+
+<sup>1</sup>Physical SuperIntelligence Lab, University of Southern California · <sup>2</sup>Department of Computer Science, Brown University 
+<br>
+<sup>*</sup> Equal Contribution
+
 <a href=''><img src='https://img.shields.io/badge/arXiv-2510.21615-b31b1b.svg'></a>
 <a href='https://hongyang-du.github.io/VideoGPA-Website/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+</div>
+
 VideoGPA is a video generation quality assessment and optimization framework with DPO (Direct Preference Optimization) training capabilities.
 
 # Quick Inference Scripts 🚀
