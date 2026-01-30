@@ -211,7 +211,7 @@ python train_dpo/CogVideoX1.5-5B_lora/03_train.py
 We would like to express our gratitude to the following projects and researchers:
 
 * **[CogVideoX](https://github.com/zai-org/CogVideo)** - The foundational state-of-the-art video generation model.
-* **[PEFT](https://github.com/huggingface/peft)** - For enabling efficient fine-tuning with LoRA and other parameter-efficient methods.
+* **[PEFT](https://github.com/huggingface/peft)** - For enabling efficient fine-tuning with LoRA and parameter-efficient framework.
 * **[Diffusion DPO](https://github.com/SalesforceAIResearch/DiffusionDPO)** - For the innovative Direct Preference Optimization approach in the diffusion latent space.
 
 ## 🌟 Citation
