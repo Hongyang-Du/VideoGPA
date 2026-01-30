@@ -16,10 +16,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
+VideoGPA leverages a 3D Geometric Foundation Model to perform scene-level reconstruction, effectively aligning video diffusion models via Direct Preference Optimization (DPO) to achieve superior 3D consistency.
 
 ![Pipeline](pipeline.png)
 
-VideoGPA is a video generation quality assessment and optimization framework with DPO (Direct Preference Optimization) training capabilities.
+
 
 # Quick Inference Scripts 🚀
 
