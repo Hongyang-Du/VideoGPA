@@ -4,8 +4,8 @@
 
 # VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation
 
-**Hongyang Du**<sup>*1,2</sup>  · **Junjie Ye**<sup>*1</sup>· **Xiaoyan Cong**<sup>*2</sup> · **Runhao Li**<sup>1</sup> · **Jingcheng Ni**<sup>2</sup>  
-**Aman Agarwal**<sup>2</sup>  · **Zeqi Zhou**<sup>2</sup> · **Zekun Li**<sup>2</sup>  · **Randall Balestriero**<sup>2</sup> · **Yue Wang**<sup>1</sup>
+[**Hongyang Du**](https://hongyang-du.github.io/)<sup>*1,2</sup>  · **Junjie Ye**<sup>*1</sup>· [**Xiaoyan Cong**](https://oliver-cong02.github.io/)<sup>*2</sup> · **Runhao Li**<sup>1</sup> · [**Jingcheng Ni**](https://jingchengni.com/)<sup>2</sup>  
+**Aman Agarwal**<sup>2</sup>  · **Zeqi Zhou**<sup>2</sup> · [**Zekun Li**](https://kunkun0w0.github.io/)<sup>2</sup>  · [**Randall Balestriero**](https://randallbalestriero.github.io/)<sup>2</sup> · [**Yue Wang**](https://yuewang.xyz/)<sup>1</sup>
 
 <sup>1</sup>Physical SuperIntelligence Lab, University of Southern California · <sup>2</sup>Department of Computer Science, Brown University 
 <br>
