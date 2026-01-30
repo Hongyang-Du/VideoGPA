@@ -20,7 +20,6 @@
 </div>
 
 ![Pipeline](pipeline.png)
-VideoGPA leverages a 3D Geometric Foundation Model to perform scene-level reconstruction, effectively aligning video diffusion models via Direct Preference Optimization (DPO) to achieve superior 3D consistency.
 
 
 # Quick Inference Scripts 🚀
