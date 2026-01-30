@@ -17,6 +17,8 @@
 
 </div>
 
+![Pipeline](pipeline.png)
+
 VideoGPA is a video generation quality assessment and optimization framework with DPO (Direct Preference Optimization) training capabilities.
 
 # Quick Inference Scripts 🚀
