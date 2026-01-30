@@ -213,7 +213,7 @@ We would like to express our gratitude to the following projects and researchers
 * **[PEFT](https://github.com/huggingface/peft)** - For parameter-efficient framework and fine-tuning with LoRA.
 * **[Diffusion DPO](https://github.com/SalesforceAIResearch/DiffusionDPO)** - For the innovative Direct Preference Optimization approach in the diffusion latent space.
 
-Thanks to **[David Liu](https://github.com/davidliuk)** for the amazing website design!
+Thanks to **[Dawei Liu](https://github.com/davidliuk)** for the amazing website design!
 ## 🌟 Citation
 If you find our work helpful, please leave us a star and cite our paper.
 
