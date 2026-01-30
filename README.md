@@ -40,16 +40,21 @@ pip install -r requirements.txt
 
 ### Automatic Download (Recommended)
 #### Method 1: Using the Download Script
-Run the provided Python script to automatically download all checkpoint files:
+Run the provided Python script to download checkpoint files:
 ```bash
-python download_checkpoints.py
+# Download all checkpoints
+python download_ckpt.py all
+
+# Or download specific checkpoints
+python download_ckpt.py i2v    # CogVideoX-I2V-5B
+python download_ckpt.py t2v    # CogVideoX-5B
+python download_ckpt.py t2v15  # CogVideoX1.5-5B
 ```
 
 The script will:
 - ✅ Check if files already exist (skip re-downloading)
 - 🚀 Download missing checkpoints with progress bars
 - 📁 Organize files into the correct directory structure
-- ⚡ Resume failed downloads automatically
 
 ### Expected Directory Structure
 After successful download, your checkpoints folder should look like:
@@ -57,7 +62,9 @@ After successful download, your checkpoints folder should look like:
 checkpoints/
 ├── VideoGPA-I2V-lora/
 │   └── adapter_model.safetensors
-└── VideoGPA-T2V-lora/
+├── VideoGPA-T2V-lora/
+│   └── adapter_model.safetensors
+└── VideoGPA-T2V1.5-lora/
     └── adapter_model.safetensors
 ```
 
