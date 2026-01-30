@@ -193,7 +193,11 @@ python train_dpo/CogVideoX-I2V-5B_lora/03_train.py
 
 ## 🙏 Acknowledgements
 
-Built on top of CogVideoX and other state-of-the-art video generation models.
+We would like to express our gratitude to the following projects and researchers:
+
+* **[CogVideoX](https://github.com/zai-org/CogVideo)** - The foundational state-of-the-art video generation model.
+* **[PEFT Framework](https://github.com/huggingface/peft)** - For enabling efficient fine-tuning with LoRA and other parameter-efficient methods.
+* **[Diffusion DPO](https://github.com/SalesforceAIResearch/DiffusionDPO)** - For the innovative Direct Preference Optimization approach in the diffusion latent space.
 
 ## 🌟 Citation
 If you find our work helpful, please leave us a star and cite our paper.
