@@ -25,7 +25,7 @@ VideoGPA leverages a 3D Geometric Foundation Model to perform scene-level recons
 
 # Quick Inference Scripts 🚀
 
-This directory contains simplified command-line scripts for generating videos using **CogVideoX** models. These scripts are designed for quick testing and allow you to run inference directly from the terminal without preparing complex JSON configuration files.
+This directory contains simplified command-line scripts for generating videos using **CogVideoX** models. These scripts are designed for quick testing and allow you to run inference directly from the terminal without preparing JSON configuration files.
 
 Both scripts support loading **LoRA adapters** for customized generation.
 
