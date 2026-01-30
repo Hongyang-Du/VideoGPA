@@ -174,20 +174,26 @@ python train_dpo/video_scorer.py
 
 #### Step 2: Encode Videos to Latent Space
 ```bash
-# For Text-to-Video models
-python train_dpo/CogVideoX-T2V-5B_lora/02_encode.py
-
-# For Image-to-Video models
+# For CogVideoX-I2V-5B
 python train_dpo/CogVideoX-I2V-5B_lora/02_encode.py
+
+# For CogVideoX-5B
+python train_dpo/CogVideoX-5B_lora/02_encode.py
+
+# For CogVideoX1.5-5B
+python train_dpo/CogVideoX1.5-5B_lora/02_encode.py
 ```
 
 #### Step 3: Run DPO Training
 ```bash
-# Text-to-Video DPO training
-python train_dpo/CogVideoX-T2V-5B_lora/03_train.py
-
-# Image-to-Video DPO training
+# For CogVideoX-I2V-5B
 python train_dpo/CogVideoX-I2V-5B_lora/03_train.py
+
+# For CogVideoX-5B
+python train_dpo/CogVideoX-5B_lora/03_train.py
+
+# For CogVideoX1.5-5B
+python train_dpo/CogVideoX1.5-5B_lora/03_train.py
 ```
 
 **Key Features:**
