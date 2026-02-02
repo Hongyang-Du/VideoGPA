@@ -13,7 +13,7 @@
 <br>
 <sup>*</sup> Equal Contribution
 
-<a href=''><img src='https://img.shields.io/badge/arXiv-2510.21615-b31b1b.svg'></a>
+<a href='https://arxiv.org/abs/2601.23286'><img src='https://img.shields.io/badge/arXiv-2510.21615-b31b1b.svg'></a>
 <a href='https://hongyang-du.github.io/VideoGPA-Website/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -56,7 +56,7 @@ The script will:
 - 📁 Organize files into the correct directory structure
 
 ### Expected Directory Structure
-After successful download, your checkpoints folder should look like:
+After a successful download, your checkpoints folder should look like:
 ```
 checkpoints/
 ├── VideoGPA-I2V-lora/
