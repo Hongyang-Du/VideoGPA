@@ -215,7 +215,6 @@ We would like to express our gratitude to the following projects and researchers
 
 Thanks to **[Dawei Liu](https://github.com/davidliuk)** for the amazing website design!
 ## 🌟 Citation
-If you find our work helpful, please leave us a star and cite our paper.
 
 ```bibtex
 @misc{du2026videogpadistillinggeometrypriors,
