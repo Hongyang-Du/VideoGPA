@@ -216,4 +216,14 @@ We would like to express our gratitude to the following projects and researchers
 Thanks to **[Dawei Liu](https://github.com/davidliuk)** for the amazing website design!
 ## 🌟 Citation
 If you find our work helpful, please leave us a star and cite our paper.
-
+bash```
+@misc{du2026videogpadistillinggeometrypriors,
+      title={VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation}, 
+      author={Hongyang Du and Junjie Ye and Xiaoyan Cong and Runhao Li and Jingcheng Ni and Aman Agarwal and Zeqi Zhou and Zekun Li and Randall Balestriero and Yue Wang},
+      year={2026},
+      eprint={2601.23286},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2601.23286}, 
+}
+```
