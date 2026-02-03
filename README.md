@@ -19,7 +19,9 @@
 
 </div>
 
-<img src="pipeline.png" alt="Pipeline" width="50%">
+<div align="center">
+  <img src="pipeline.png" alt="Pipeline" width="50%">
+</div>
 
 
 # Quick Inference Scripts 🚀
