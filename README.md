@@ -19,7 +19,7 @@
 
 </div>
 
-![Pipeline](pipeline.png)
+<img src="pipeline.png" alt="Pipeline" width="50%">
 
 
 # Quick Inference Scripts 🚀
