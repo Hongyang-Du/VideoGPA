@@ -20,7 +20,7 @@
 </div>
 
 <div align="center">
-  <img src="pipeline.png" alt="Pipeline" width="50%">
+  <img src="pipeline.png" alt="Pipeline" width="70%">
 </div>
 
 
