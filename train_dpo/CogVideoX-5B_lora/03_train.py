@@ -257,7 +257,7 @@ def main_train(config: Dict[str, Any]):
     trainer = pl.Trainer(
         accelerator="gpu",
         devices=config['devices'],
-        strategy=DDPStrategy(timeout=datetime.timedelta(seconds=600)),
+        strategy=DDPStrategy(timeout=datetime.timedelta(seconds=6000)),
         limit_val_batches=50,
         precision="bf16-mixed",
         max_steps=config['max_steps'],
