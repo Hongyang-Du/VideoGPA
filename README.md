@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation [Still in Maintainance]
+# VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation [Under Construction]
 
 [**Hongyang Du**](https://hongyang-du.github.io/)<sup>*1,2</sup>  · [**Junjie Ye**](https://junjieye.com/)<sup>*1</sup>· [**Xiaoyan Cong**](https://oliver-cong02.github.io/)<sup>*2</sup> · **Runhao Li**<sup>1</sup> · [**Jingcheng Ni**](https://jingchengni.com/)<sup>2</sup>  
 [**Aman Agarwal**](https://aman190202.github.io)<sup>2</sup>  · **Zeqi Zhou**<sup>2</sup> · [**Zekun Li**](https://kunkun0w0.github.io/)<sup>2</sup>  · [**Randall Balestriero**](https://randallbalestriero.github.io/)<sup>2</sup> · [**Yue Wang**](https://yuewang.xyz/)<sup>1</sup>
@@ -24,41 +24,28 @@
 </div>
 
 
-# Quick Inference Scripts 🚀
-
-This directory contains simplified command-line scripts for generating videos using **CogVideoX** models. These scripts are designed for quick testing and allow you to run inference directly from the terminal without preparing JSON configuration files.
-
-Both scripts support loading **LoRA adapters** for customized generation.
+# Quick Start
 
 ## 📋 Requirements
 
-Please make sure your Python version is between 3.10 and 3.12, inclusive of both 3.10 and 3.12.
+Python 3.10 – 3.12.
 
 ```bash
 pip install -r requirements.txt
 ```
-## 🔘 Checkpoint Download 
 
-### Automatic Download (Recommended)
-#### Method 1: Using the Download Script
-Run the provided Python script to download checkpoint files:
+## 🔘 Checkpoint Download
+
 ```bash
-# Download all checkpoints
+# Download all VideoGPA LoRA checkpoints
 python download_ckpt.py all
 
-# Or download specific checkpoints
+# Or download specific ones
 python download_ckpt.py i2v    # CogVideoX-I2V-5B
 python download_ckpt.py t2v    # CogVideoX-5B
 python download_ckpt.py t2v15  # CogVideoX1.5-5B
 ```
 
-The script will:
-- ✅ Check if files already exist (skip re-downloading)
-- 🚀 Download missing checkpoints with progress bars
-- 📁 Organize files into the correct directory structure
-
-### Expected Directory Structure
-After a successful download, your checkpoints folder should look like:
 ```
 checkpoints/
 ├── VideoGPA-I2V-lora/
@@ -69,151 +56,174 @@ checkpoints/
     └── adapter_model.safetensors
 ```
 
-## 📝 Available Scripts
+## 🎬 Video Generation
 
-### 1. Text-to-Video Generation ([t2v_inference.py](generate/t2v_inference.py))
+All scripts share the same interface: `--prompt_json` (required), `--output_dir` (required), `--lora_path` (optional for DPO), `--gpu_id`, `--seed`.
 
-Generate videos from text prompts using CogVideoX-5B.
+### CogVideoX-5B Text-to-Video
 
-**Basic Usage:**
 ```bash
-cd generate
-python t2v_inference.py "A cat playing with a ball in a garden"
+# Baseline (no LoRA)
+python generate/CogVideoX-5B.py \
+    --prompt_json prompts.json \
+    --output_dir outputs/t2v_baseline
+
+# With VideoGPA DPO LoRA
+python generate/CogVideoX-5B.py \
+    --prompt_json prompts.json \
+    --output_dir outputs/t2v_dpo \
+    --lora_path checkpoints/VideoGPA-T2V-lora
 ```
 
-**Advanced Usage:**
+### CogVideoX-5B Image-to-Video
+
 ```bash
-python t2v_inference.py "A flying drone over a city skyline at sunset" \
-    --output_dir ./my_videos \
-    --lora_path ./checkpoints/my_lora_adapter \
-    --gpu_id 0
+# Baseline
+python generate/CogVideoX-5B-I2V.py \
+    --prompt_json prompts.json \
+    --output_dir outputs/i2v_baseline
+
+# With VideoGPA DPO LoRA
+python generate/CogVideoX-5B-I2V.py \
+    --prompt_json prompts.json \
+    --output_dir outputs/i2v_dpo \
+    --lora_path checkpoints/VideoGPA-I2V-lora
 ```
 
-**Arguments:**
-- `prompt` (required): Text prompt for video generation
-- `--output_dir`: Directory to save generated videos (default: `./outputs`)
-- `--lora_path`: Path to LoRA adapter weights (optional)
-- `--gpu_id`: GPU device ID (default: 0)
+### CogVideoX1.5-5B Text-to-Video
 
-**Output:** Videos saved as `{prompt}_seed{seed}.mp4`
-
----
-
-### 2. Image-to-Video Generation ([i2v_inference.py](generate/i2v_inference.py))
-
-Generate videos from a static image with text guidance using CogVideoX-5B-I2V.
-
-**Basic Usage:**
 ```bash
-cd generate
-python i2v_inference.py "The camera slowly zooms in" ./path/to/image.jpg
+# Baseline
+python generate/CogVideoX1.5-5B.py \
+    --prompt_json prompts.json \
+    --output_dir outputs/t2v15_baseline
+
+# With VideoGPA DPO LoRA
+python generate/CogVideoX1.5-5B.py \
+    --prompt_json prompts.json \
+    --output_dir outputs/t2v15_dpo \
+    --lora_path checkpoints/VideoGPA-T2V1.5-lora
 ```
 
-**Advanced Usage:**
+### Wan2.2 TI2V-5B (Text+Image-to-Video)
+
 ```bash
-python i2v_inference.py "A realistic continuation of the reference scene. Everything must remain completely static: no moving people, no shifting objects, and no dynamic elements. Only the camera is allowed to move. Render physically accurate multi-step camera motion.  Camera motion: roll gently to one side, then swing around the room, followed by push forward into the scene." ./image.png \
-    --output_dir ./i2v_outputs \
-    --lora_path ./checkpoints/i2v_lora \
-    --gpu_id 1
+# Baseline
+python generate/Wan2.2-TI2V-5B.py \
+    --model_path /path/to/Wan2.2-TI2V-5B \
+    --prompt_json prompts.json \
+    --output_dir outputs/wan_baseline
+
+# With LoRA (when available)
+python generate/Wan2.2-TI2V-5B.py \
+    --model_path /path/to/Wan2.2-TI2V-5B \
+    --prompt_json prompts.json \
+    --output_dir outputs/wan_dpo \
+    --lora_path path/to/wan_lora
 ```
 
-**Arguments:**
-- `prompt` (required): Text prompt describing motion/scene
-- `image_path` (required): Path to input image file
-- `--output_dir`: Directory to save generated videos (default: `./outputs`)
-- `--lora_path`: Path to LoRA adapter weights (optional)
-- `--gpu_id`: GPU device ID (default: 0)
+### Common Arguments
 
-**Output:** Videos saved as `{image_name}_seed{seed}.mp4`
+| Argument | Description | Default |
+|----------|-------------|---------|
+| `--prompt_json` | JSON file with prompts (required) | — |
+| `--output_dir` | Output directory (required) | — |
+| `--lora_path` | Path to LoRA adapter (optional) | `None` |
+| `--gpu_id` | GPU device ID | `0` |
+| `--seed` | Random seed | `42` |
+| `--num_prompts` | Limit number of prompts | all |
 
----
+### Prompt JSON Format
 
-## ⚙️ Configuration
+Scripts accept both dict and list formats:
 
-Both scripts include configurable generation parameters:
+```json
+// Dict format (I2V with images)
+{
+  "scene_001": {"text_prompt": "Camera pans left", "image_prompt": "/path/to/img.png"},
+  "scene_002": {"text_prompt": "Zoom into the building", "image_prompt": "/path/to/img2.png"}
+}
 
-```python
-NUM_INFERENCE_STEPS = 50  # Number of diffusion steps
-GUIDANCE_SCALE = 6.0      # Classifier-free guidance scale
-SEED = 42              # Seed for generation
+// List format (T2V)
+[
+  {"group_id": "sample_0", "text_prompt": "A cat playing in a garden"},
+  {"group_id": "sample_1", "text_prompt": "Drone flying over a city"}
+]
 ```
-
-
-## 💾 GPU Memory Requirements
-
-- **Minimum VRAM**: diffusers BF16 ~5GB for base models 
-- Memory optimizations (VAE tiling/slicing) are automatically enabled
-
-## 🚀 Features
-
-- **Video Quality Assessment**: Comprehensive metrics for evaluating video generation quality
-- **DPO Training**: Direct Preference Optimization for video generation models
-- **Multi-Model Support**: Compatible with CogVideoX and other video generation models
-- **Flexible Pipeline**: Easy-to-use inference and training pipelines
 
 ## 📁 Code Structure
 
 ```
 VideoGPA/
-├── data_prep/      # Data preparation scripts
-├── train_dpo/      # DPO training scripts
-├── pipelines/      # Inference pipelines
-├── metrics/        # Quality assessment metrics
-├── vggt/           # Video generation model architecture
-└── utils/          # Utility functions
+├── generate/                   # Video generation scripts
+│   ├── CogVideoX-5B.py            # T2V generation
+│   ├── CogVideoX-5B-I2V.py        # I2V generation
+│   ├── CogVideoX1.5-5B.py         # T2V 1.5 generation
+│   └── Wan2.2-TI2V-5B.py          # Wan TI2V generation
+├── train/                      # DPO training pipeline
+│   ├── 01_preference_pair.py       # Video scoring (shared)
+│   ├── dataset.py                  # DPO dataset (shared, CogVideo + Wan)
+│   ├── loss.py                     # DPO loss (shared)
+│   ├── CogVideoX-5B/              # CogVideoX-5B encode & train
+│   ├── CogVideoX-I2V-5B/          # CogVideoX-I2V encode & train
+│   ├── CogVideoX1.5-5B/           # CogVideoX1.5-5B encode & train
+│   └── Wan2.2-TI2V-5B/            # Wan2.2 TI2V encode & train
+├── checkpoints/                # VideoGPA LoRA weights
+├── pipelines/                  # Shared processing pipelines
+├── metrics/                    # Quality assessment metrics
+└── utils/                      # Utility functions
 ```
 
+## 🔧 DPO Training
 
-## 🔧 DPO Training (Direct Preference Optimization) 
+VideoGPA uses DPO (Direct Preference Optimization) to improve 3D consistency in video generation. The training pipeline has 3 steps:
 
-VideoGPA leverages DPO to optimize video generation quality through preference learning. The training pipeline consists of 3 steps after you have your generated videos. Revise the configs as you need:
-
-#### Step 1: Score Your Generate Videos
+#### Step 1: Score Generated Videos
 ```bash
-python train_dpo/video_scorer.py
+python train/01_preference_pair.py
 ```
 
 #### Step 2: Encode Videos to Latent Space
 ```bash
-# For CogVideoX-I2V-5B
-python train_dpo/CogVideoX-I2V-5B_lora/02_encode.py
+# CogVideoX models
+python train/CogVideoX-I2V-5B/02_encode.py
+python train/CogVideoX-5B/02_encode.py
+python train/CogVideoX1.5-5B/02_encode.py
 
-# For CogVideoX-5B
-python train_dpo/CogVideoX-5B_lora/02_encode.py
-
-# For CogVideoX1.5-5B
-python train_dpo/CogVideoX1.5-5B_lora/02_encode.py
+# Wan2.2 (requires --base_path and --model_path)
+python train/Wan2.2-TI2V-5B/02_encode.py \
+    --base_path /path/to/dataset \
+    --model_path /path/to/Wan2.2-TI2V-5B \
+    --input_json /path/to/scored.json \
+    --output_json /path/to/encoded.json
 ```
 
 #### Step 3: Run DPO Training
 ```bash
-# For CogVideoX-I2V-5B
-python train_dpo/CogVideoX-I2V-5B_lora/03_train.py
+# CogVideoX models
+python train/CogVideoX-I2V-5B/03_train.py --base_path /path/to/dataset
+python train/CogVideoX-5B/03_train.py --base_path /path/to/dataset
+python train/CogVideoX1.5-5B/03_train.py --base_path /path/to/dataset
 
-# For CogVideoX-5B
-python train_dpo/CogVideoX-5B_lora/03_train.py
-
-# For CogVideoX1.5-5B
-python train_dpo/CogVideoX1.5-5B_lora/03_train.py
+# Wan2.2
+python train/Wan2.2-TI2V-5B/03_train.py \
+    --base_path /path/to/dataset \
+    --model_path /path/to/Wan2.2-TI2V-5B
 ```
 
-**Key Features:**
-- 🎯 Preference-based learning using winner/loser pairs
-- 🔧 Parameter-efficient fine-tuning with LoRA
-- 📊 Multiple quality metrics support
-- ⚡ Distributed training with PyTorch Lightning
-- 💾 Automatic gradient checkpointing and memory optimization
+**Shared components** (`train/dataset.py`, `train/loss.py`) work across all models — CogVideoX uses v-prediction, Wan uses flow matching, but the DPO loss operates on model-agnostic (prediction, target) pairs.
 
-**Data Format:** Training requires JSON metadata containing preference pairs - multiple videos generated from the same prompt with quality scores. See [dataset.py](train_dpo/dataset.py) for details.
+**Data Format:** Training requires JSON metadata with preference pairs. See [dataset.py](train/dataset.py) for the expected format.
 
 
 ## 🙏 Acknowledgements
 
 We would like to express our gratitude to the following projects and researchers:
 
-* **[CogVideoX](https://github.com/zai-org/CogVideo)** - The foundational state-of-the-art video generation model.
-* **[PEFT](https://github.com/huggingface/peft)** - For parameter-efficient framework and fine-tuning with LoRA.
-* **[Diffusion DPO](https://github.com/SalesforceAIResearch/DiffusionDPO)** - For the innovative Direct Preference Optimization approach in the diffusion latent space.
+* **[CogVideoX](https://github.com/zai-org/CogVideo)** - State-of-the-art video generation model.
+* **[Wan2.2](https://github.com/Wan-Video/Wan2.2)** - Text/Image-to-video generation model.
+* **[PEFT](https://github.com/huggingface/peft)** - Parameter-efficient fine-tuning with LoRA.
+* **[Diffusion DPO](https://github.com/SalesforceAIResearch/DiffusionDPO)** - Direct Preference Optimization in the diffusion latent space.
 
 Thanks to **[Dawei Liu](https://github.com/davidliuk)** for the amazing website design!
 ## 🌟 Citation

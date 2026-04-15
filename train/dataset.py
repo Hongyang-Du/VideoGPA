@@ -114,8 +114,8 @@ class DPODataset(Dataset):
 
         for group in self.raw_groups:
             group_id = group.get('group_id', 'unknown')
-            prompt = group.get('prompt', '')
-            input_image_path = group.get('input_image_path')
+            prompt = group.get('text_prompt', group.get('prompt', ''))
+            input_image_path = group.get('image_path', group.get('input_image_path'))
             original_video_path = group.get('original_video_path')
             videos = group.get('videos', [])
 
@@ -233,9 +233,10 @@ class DPODataset(Dataset):
         # ========================================
         shared_condition = _torch_load_weights_only_compatible(self.base_path / winner["condition_path"])
 
-        # Load embeddings
+        # Load embeddings (support both CogVideo and Wan condition formats)
         prompt_emb = shared_condition.get("encoder_hidden_states")
-        image_emb = shared_condition.get("image_embeds")
+        image_emb = shared_condition.get("image_embeds")      # CogVideo I2V
+        image_latent = shared_condition.get("image_latent")    # Wan TI2V
 
         # ========================================
         # Return dictionary
@@ -244,14 +245,15 @@ class DPODataset(Dataset):
             "x_win": x_win,
             "x_lose": x_lose,
             "prompt_emb": prompt_emb,
-            "prompt": pair["prompt"],  
+            "prompt": pair["prompt"],
             "m_win": winner[self.metric_name],
             "m_lose": loser[self.metric_name],
         }
 
-        # Add image embedding (I2V only)
         if image_emb is not None:
             result["image_emb"] = image_emb
+        if image_latent is not None:
+            result["image_latent"] = image_latent
 
         return result
 
@@ -260,7 +262,7 @@ def collate_fn(batch: List[Dict[str, Any]]) -> Dict[str, Any]:
     result = {}
 
     tensor_keys = ["x_win", "x_lose", "prompt_emb"]
-    optional_tensor_keys = ["image_emb"]
+    optional_tensor_keys = ["image_emb", "image_latent"]
 
     for key in tensor_keys:
         if key in batch[0]:
