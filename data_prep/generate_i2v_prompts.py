@@ -4,7 +4,7 @@ from pathlib import Path
 import os
 
 # ============================================================
-# 配置
+# Configuration
 # ============================================================
 FIRST_FRAMES = 'Your/Path/To/First_Frames'
 OUTPUT_JSON ='Your/Path/To/Output/prompts.json'
@@ -16,7 +16,7 @@ PREFIX_PROMPT = (
 )
 
 # ============================================================
-# 自然相机运动（无数字，无符号）
+# Natural camera motions (no numbers, no symbols)
 # ============================================================
 
 TRANSLATIONS = [
@@ -50,7 +50,7 @@ COMPLEX_PATHS = [
 
 
 def random_motion_piece():
-    """返回单个自然语言运动描述。"""
+    """Return a single natural-language motion description."""
     group = random.choice(["T", "R", "C"])
     if group == "T":
         return random.choice(TRANSLATIONS)
@@ -61,7 +61,7 @@ def random_motion_piece():
 
 
 def generate_multi_stage_motion():
-    """生成由自然连接词连接的 2-3 段运动描述。"""
+    """Generate a 2-3 stage motion description joined by natural connectives."""
     pieces = [random_motion_piece() for _ in range(random.choice([2, 3]))]
 
     if len(pieces) == 1:
@@ -73,7 +73,7 @@ def generate_multi_stage_motion():
 
 
 # ============================================================
-# 主函数
+# Main function
 # ============================================================
 def main():
     frames = sorted(Path(FIRST_FRAMES).glob("*.png"))

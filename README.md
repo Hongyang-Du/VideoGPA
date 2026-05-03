@@ -105,73 +105,54 @@ python generate/CogVideoX1.5-5B.py \
     --lora_path checkpoints/VideoGPA-T2V1.5-lora
 ```
 
-### Wan2.2 TI2V-5B (Text+Image-to-Video)
-
-```bash
-# Baseline
-python generate/Wan2.2-TI2V-5B.py \
-    --model_path /path/to/Wan2.2-TI2V-5B \
-    --prompt_json prompts.json \
-    --output_dir outputs/wan_baseline
-
-# With LoRA (when available)
-python generate/Wan2.2-TI2V-5B.py \
-    --model_path /path/to/Wan2.2-TI2V-5B \
-    --prompt_json prompts.json \
-    --output_dir outputs/wan_dpo \
-    --lora_path path/to/wan_lora
-```
-
 ### Common Arguments
 
 | Argument | Description | Default |
-|----------|-------------|---------|
+|---|---|---|
 | `--prompt_json` | JSON file with prompts (required) | — |
 | `--output_dir` | Output directory (required) | — |
-| `--lora_path` | Path to LoRA adapter (optional) | `None` |
+| `--lora_path` | Path to LoRA adapter | `None` |
 | `--gpu_id` | GPU device ID | `0` |
 | `--seed` | Random seed | `42` |
 | `--num_prompts` | Limit number of prompts | all |
 
 ### Prompt JSON Format
 
-Scripts accept both dict and list formats:
-
 ```json
-// Dict format (I2V with images)
 {
-  "scene_001": {"text_prompt": "Camera pans left", "image_prompt": "/path/to/img.png"},
-  "scene_002": {"text_prompt": "Zoom into the building", "image_prompt": "/path/to/img2.png"}
+  "scene_001": {"text_prompt": "Camera pans left", "image_prompt": "/path/to/frame.png"},
+  "scene_002": {"text_prompt": "Zoom into the building", "image_prompt": "/path/to/frame2.png"}
 }
-
-// List format (T2V)
-[
-  {"group_id": "sample_0", "text_prompt": "A cat playing in a garden"},
-  {"group_id": "sample_1", "text_prompt": "Drone flying over a city"}
-]
 ```
+
+For T2V, `image_prompt` can be omitted. See `data_prep/generate_i2v_prompts.py` to auto-generate prompts from a folder of first frames.
 
 ## 📁 Code Structure
 
 ```
 VideoGPA/
-├── generate/                   # Video generation scripts
-│   ├── CogVideoX-5B.py            # T2V generation
-│   ├── CogVideoX-5B-I2V.py        # I2V generation
-│   ├── CogVideoX1.5-5B.py         # T2V 1.5 generation
-│   └── Wan2.2-TI2V-5B.py          # Wan TI2V generation
-├── train/                      # DPO training pipeline
-│   ├── 01_preference_pair.py       # Video scoring (shared)
-│   ├── dataset.py                  # DPO dataset (shared, CogVideo + Wan)
-│   ├── loss.py                     # DPO loss (shared)
-│   ├── CogVideoX-5B/              # CogVideoX-5B encode & train
-│   ├── CogVideoX-I2V-5B/          # CogVideoX-I2V encode & train
-│   ├── CogVideoX1.5-5B/           # CogVideoX1.5-5B encode & train
-│   └── Wan2.2-TI2V-5B/            # Wan2.2 TI2V encode & train
-├── checkpoints/                # VideoGPA LoRA weights
-├── pipelines/                  # Shared processing pipelines
-├── metrics/                    # Quality assessment metrics
-└── utils/                      # Utility functions
+├── generate/                    # Video generation scripts
+│   ├── CogVideoX-5B.py              # T2V
+│   ├── CogVideoX-5B-I2V.py          # I2V
+│   ├── CogVideoX1.5-5B.py           # T2V 1.5
+│   └── Wan2.2-TI2V-5B.py            # Wan TI2V
+├── train/                       # DPO training pipeline
+│   ├── 01_preference_pair.py        # Video scoring
+│   ├── dataset.py                   # DPO dataset (CogVideo + Wan)
+│   ├── loss.py                      # DPO loss
+│   ├── CogVideoX-5B/                # encode & train
+│   ├── CogVideoX-I2V-5B/            # encode & train
+│   ├── CogVideoX1.5-5B/             # encode & train
+│   └── Wan2.2-TI2V-5B/              # encode & train
+├── dl3dv_video_captions/        # Benchmark captions (1K / 8K / 9K / 10K / 11K)
+├── data_prep/                   # Scripts to prepare prompt JSONs
+├── checkpoints/                 # VideoGPA LoRA weights
+├── metrics/                     # Evaluation metrics (MSE, SSIM, LPIPS, epipolar, …)
+├── pipelines/                   # Shared video processing pipeline
+├── utils/                       # Utility functions
+├── replicate.py                 # Multi-GPU I2V generation for benchmarking
+├── replicate_scorer.py          # Multi-GPU DA3 scoring
+└── replicate.sh                 # End-to-end generation + scoring script
 ```
 
 ## 🔧 DPO Training
@@ -215,6 +196,22 @@ python train/Wan2.2-TI2V-5B/03_train.py \
 
 **Data Format:** Training requires JSON metadata with preference pairs. See [dataset.py](train/dataset.py) for the expected format.
 
+
+## 📊 Benchmark Replication
+
+`replicate.sh` runs generation and scoring end-to-end. Requires [DL3DV-10K](https://dl3dv-10k.github.io/DL3DV-10K/) first frames; text captions are provided in `dl3dv_video_captions/captions_1K.json`.
+
+```bash
+bash replicate.sh \
+  --dl3dv_dir /path/to/DL3DV-10K \
+  --lora_path checkpoints/VideoGPA-I2V-lora \
+  --output_dir output/i2v_dpo \
+  --devices 0,1,2,3,4,5,6,7
+```
+
+Scores are saved to `<output_dir>/scores.csv`. Run `bash replicate.sh --help` for all options.
+
+> **Note:** Scores may differ slightly from the paper due to non-deterministic CUDA operators in inference and hardware variation across machines.
 
 ## 🙏 Acknowledgements
 

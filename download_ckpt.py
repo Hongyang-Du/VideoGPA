@@ -33,11 +33,10 @@ def download_file(url, save_path):
         print(f"❌ Failed to download {url}: {e}")
 
 def main():
-    # GitHub Release 配置
+    # GitHub Release URL for checkpoints
     RELEASE_TAG = "v1.0.0-weights"
     BASE_URL = f"https://github.com/Hongyang-Du/VideoGPA/releases/download/{RELEASE_TAG}"
     
-    # 映射表
     ckpt_map = {
         "i2v": {
             "url": f"{BASE_URL}/i2v_adapter_model.safetensors",

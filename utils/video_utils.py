@@ -19,14 +19,14 @@ def center_crop_and_resize(frame, size=518):
 def sample_uniform_frames(video_path: str, n_frames: int = 48):
 
     try:
-        # ctx=cpu(0) 确保在 CPU 上解码，避免占用过量显存
+        # ctx=cpu(0) ensures decoding on CPU to avoid excessive VRAM usage
         vr = VideoReader(video_path, ctx=cpu(0))
     except Exception as e:
-        raise RuntimeError(f"Decord 无法读取视频 {video_path}: {e}")
+        raise RuntimeError(f"Decord cannot read video {video_path}: {e}")
 
     total = len(vr)
     if total <= 0:
-        raise RuntimeError(f"视频帧数为 0: {video_path}")
+        raise RuntimeError(f"Video has 0 frames: {video_path}")
 
     n_eff = min(n_frames, total)
     indices = np.linspace(0, total - 1, n_eff).astype(int)

@@ -11,7 +11,7 @@ import numpy as np
 
 def project_points(pc: torch.Tensor, colors: torch.Tensor, K: torch.Tensor, E: torch.Tensor, H: int, W: int, bg=(0, 0, 0)) -> torch.Tensor:
     """
-    PyTorch PointCloud Rendering (GPU Version)。
+    PyTorch PointCloud Rendering (GPU Version).
     """
     R = E[:3, :3]
     t = E[:3, 3]
@@ -56,7 +56,7 @@ def project_points(pc: torch.Tensor, colors: torch.Tensor, K: torch.Tensor, E: t
 
 def batch_reproject(pc, colors, intrinsics, extrinsics, H, W, save_path=None) -> torch.Tensor:
     """
-    Batch reproject (GPU Tensor)。
+    Batch reproject (GPU Tensor).
     Input: [T, 3, H, W] Tensor range [-1, 1]
     """
     if save_path is not None:
@@ -72,8 +72,9 @@ def batch_reproject(pc, colors, intrinsics, extrinsics, H, W, save_path=None) ->
             return x.to(device='cuda', dtype=torch.float32)
         return x
     
-    # 1. 清洗数据类型
-    # 注意: 如果 pc, colors 已经是 GPU Tensor，可以跳过这步，但在函数内部做保证最安全
+    # 1. Sanitize data types
+    # Note: if pc and colors are already GPU Tensors, this step can be skipped,
+    # but enforcing it inside the function is the safest approach
     pc = to_cuda_float(pc)
     colors = to_cuda_float(colors)
     intrinsics = to_cuda_float(intrinsics)
