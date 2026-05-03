@@ -54,7 +54,7 @@ class Consistency_Score(Metric):
         self.mse_metric = MSEMetric()
         self.lpips_metric = LPIPSMetric(lpips_net=lpips_net, device=device)
 
-    def compute(self, *, gt, rep, extrinsics, ratio=0.1, **kwargs):
+    def compute(self, *, gt, rep, extrinsics, ratio=1, **kwargs):
         """
         Args:
             gt:         [B, C, H, W] Tensor
