@@ -18,7 +18,6 @@ from metrics.mse import MSEMetric, PSNRMetric, SSIMMetric
 from metrics.mvcs import MVCSMetric
 from pipelines.process_video import DEFAULT_DA3_MODEL, DEFAULT_VGGT_MODEL, VideoProcessor
 
-
 def parse_int_list_env(name, default):
     raw = os.getenv(name)
     if not raw:

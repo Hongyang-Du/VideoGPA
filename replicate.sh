@@ -20,7 +20,6 @@ set -e
 # =============================================================
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 # ---------- defaults ----------
 MODE="dpo"
 LORA_PATH="${SCRIPT_DIR}/checkpoints/VideoGPA-I2V-lora"

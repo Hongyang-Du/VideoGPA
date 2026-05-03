@@ -15,10 +15,12 @@ def parse_int_list_env(name, default):
     return [int(item.strip()) for item in raw.split(",") if item.strip()]
 
 
+_HERE = os.path.dirname(os.path.abspath(__file__))
+
 ENV_MODE = os.getenv('RUN_MODE', 'dpo')
-ENV_LORA_PATH = os.getenv('RUN_LORA_PATH', '/workspace/workspace/outputs/cogvideo_dpo_v3/final_lora')
-ENV_OUTPUT_DIR = os.getenv('RUN_OUTPUT_DIR', '/workspace/VideoGPA/benchmark_videos/dpo_v3')
-ENV_PROMPT_JSON = os.getenv('PROMPT_JSON', '/workspace/VideoGPA/dl3dv_video_captions/captions_1K.json')
+ENV_LORA_PATH = os.getenv('RUN_LORA_PATH', os.path.join(_HERE, 'checkpoints/VideoGPA-I2V-lora'))
+ENV_OUTPUT_DIR = os.getenv('RUN_OUTPUT_DIR', os.path.join(_HERE, 'output/replicate'))
+ENV_PROMPT_JSON = os.getenv('PROMPT_JSON', os.path.join(_HERE, 'dl3dv_video_captions/captions_1K.json'))
 ENV_DL3DV_BASE_DIR = os.getenv('DL3DV_BASE_DIR', '/datasets/DL3DV-10K')
 ENV_DEVICES = parse_int_list_env('RUN_DEVICES', [0])
 ENV_NUM_PROMPTS = int(os.getenv('RUN_NUM_PROMPTS', '100'))
