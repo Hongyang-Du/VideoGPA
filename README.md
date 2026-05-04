@@ -24,6 +24,12 @@
 </div>
 
 
+## 🔥 News
+
+- We release the training code for **Wan2.2-TI2V-5B**! Check it out in [`train/Wan2.2-TI2V-5B`](train/Wan2.2-TI2V-5B).
+- We release our **DL3DV video captions** generated with CogVLM. Check them out in [`dl3dv_video_captions`](dl3dv_video_captions).
+- We release **VideoGPA-I2V-1K** — a lightweight checkpoint trained for only **1,000 steps** that already achieves surprisingly strong benchmark scores. We're releasing it so everyone can play around with it! Download via `python download_ckpt.py i2v-1k`.
+
 # Quick Start
 
 ## 📋 Requirements
@@ -41,14 +47,17 @@ pip install -r requirements.txt
 python download_ckpt.py all
 
 # Or download specific ones
-python download_ckpt.py i2v    # CogVideoX-I2V-5B
-python download_ckpt.py t2v    # CogVideoX-5B
-python download_ckpt.py t2v15  # CogVideoX1.5-5B
+python download_ckpt.py i2v      # CogVideoX-I2V-5B
+python download_ckpt.py i2v-1k   # CogVideoX-I2V-5B (1K steps, lightweight)
+python download_ckpt.py t2v      # CogVideoX-5B
+python download_ckpt.py t2v15    # CogVideoX1.5-5B
 ```
 
 ```
 checkpoints/
 ├── VideoGPA-I2V-lora/
+│   └── adapter_model.safetensors
+├── VideoGPA-I2V-1K-lora/
 │   └── adapter_model.safetensors
 ├── VideoGPA-T2V-lora/
 │   └── adapter_model.safetensors
@@ -88,6 +97,12 @@ python generate/CogVideoX-5B-I2V.py \
     --prompt_json prompts.json \
     --output_dir outputs/i2v_dpo \
     --lora_path checkpoints/VideoGPA-I2V-lora
+
+# With VideoGPA-I2V-1K LoRA (lightweight, 1K steps)
+python generate/CogVideoX-5B-I2V.py \
+    --prompt_json prompts.json \
+    --output_dir outputs/i2v_1k \
+    --lora_path checkpoints/VideoGPA-I2V-1K-lora
 ```
 
 ### CogVideoX1.5-5B Text-to-Video
