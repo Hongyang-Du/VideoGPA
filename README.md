@@ -25,10 +25,11 @@
 
 
 ## 🔥 News
-
-- We release the training code for **Wan2.2-TI2V-5B**! Check it out in [`train/Wan2.2-TI2V-5B`](train/Wan2.2-TI2V-5B).
+- We release **VideoGPA-I2V-1K** — we find that only **1,000 steps** already achieves surprisingly strong visual quality and benchmark scores. We're releasing it so everyone can play around with it! Download via `python download_ckpt.py i2v-1k`.
 - We release our **DL3DV video captions** generated with CogVLM. Check them out in [`dl3dv_video_captions`](dl3dv_video_captions).
-- We release **VideoGPA-I2V-1K** — a lightweight checkpoint trained for only **1,000 steps** that already achieves surprisingly strong benchmark scores. We're releasing it so everyone can play around with it! Download via `python download_ckpt.py i2v-1k`.
+- We release the training code for **Wan2.2-TI2V-5B**! Check it out in [`train/Wan2.2-TI2V-5B`](train/Wan2.2-TI2V-5B).
+
+
 
 # Quick Start
 
