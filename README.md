@@ -233,8 +233,8 @@ Scores are saved to `<output_dir>/scores.csv`. Run `bash replicate.sh --help` fo
 
 We would like to express our gratitude to the following projects and researchers:
 
-* **[CogVideoX](https://github.com/zai-org/CogVideo)** - State-of-the-art video generation model.
-* **[Wan2.2](https://github.com/Wan-Video/Wan2.2)** - Text/Image-to-video generation model.
+* **[CogVideoX](https://github.com/zai-org/CogVideo)** - Text/Image-to-video generation model.
+* **[Wan2.2](https://github.com/Wan-Video/Wan2.2)** - State-of-the-art video generation model.
 * **[PEFT](https://github.com/huggingface/peft)** - Parameter-efficient fine-tuning with LoRA.
 * **[Diffusion DPO](https://github.com/SalesforceAIResearch/DiffusionDPO)** - Direct Preference Optimization in the diffusion latent space.
 
