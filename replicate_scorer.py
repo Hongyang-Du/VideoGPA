@@ -37,8 +37,8 @@ def build_score_config():
     default_model = DEFAULT_DA3_MODEL if backbone == "da3" else DEFAULT_VGGT_MODEL
     return {
         "devices": parse_int_list_env("SCORE_DEVICES", [0]),
-        "base_dir": os.getenv("SCORE_BASE_DIR", "/workspace/VideoGPA/benchmark_videos/dpo_v3"),
-        "output_csv": os.getenv("SCORE_OUTPUT_CSV", "/workspace/VideoGPA/benchmark_videos/scores.csv"),
+        "base_dir": os.getenv("SCORE_BASE_DIR", "output/replicate"),
+        "output_csv": os.getenv("SCORE_OUTPUT_CSV", "output/replicate/scores.csv"),
         "output_json": os.getenv("SCORE_OUTPUT_JSON", ""),
         "num_frames": int(os.getenv("SCORE_NUM_FRAMES", "10")),
         "conf_thres": int(os.getenv("SCORE_CONF_THRES", "0")),
@@ -53,7 +53,7 @@ def build_score_config():
 
 
 SCORE_CONFIG = build_score_config()
-METRIC_COLS = ["mse", "consistency_score", "motion_score", "psnr", "ssim", "lpips", "mvcs", "epipolar"]
+METRIC_COLS = ["psnr", "ssim", "lpips", "mvcs", "consistency_score", "epipolar"]
 
 
 def build_relative_path(base_path, video_path):
