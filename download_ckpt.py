@@ -53,14 +53,18 @@ def main():
         "t2v15": {
             "url": f"{BASE_URL}/t2v15_adapter_model.safetensors",
             "save_path": "checkpoints/VideoGPA-T2V1.5-lora/adapter_model.safetensors"
+        },
+        "ti2v": {
+            "url": f"{BASE_URL}/wan_ti2v_adapter_model.safetensors",
+            "save_path": "checkpoints/VideoGPA-Wan2.2TI2V-lora/adapter_model.safetensors"
         }
     }
 
     parser = argparse.ArgumentParser(description="VideoGPA Checkpoint Downloader")
     parser.add_argument(
         "type",
-        choices=["i2v", "i2v-1k", "t2v", "t2v15", "all"],
-        help="Select which checkpoint to download (i2v, i2v-1k, t2v, t2v15, or all)"
+        choices=["i2v", "i2v-1k", "t2v", "t2v15", "ti2v", "all"],
+        help="Select which checkpoint to download (i2v, i2v-1k, t2v, t2v15, ti2v, or all)"
     )
     args = parser.parse_args()
 

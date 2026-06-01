@@ -25,6 +25,7 @@
 
 
 ## 🔥 News
+- [x] We release the **VideoGPA-Wan2.2-TI2V DPO LoRA** checkpoint! Download via `python download_ckpt.py ti2v` and generate with [`generate/Wan2.2-TI2V-5B.py`](generate/Wan2.2-TI2V-5B.py).
 - [x] We release **VideoGPA-I2V-1K** — we find that only **1,000 steps** already achieves surprisingly strong visual quality and benchmark scores. We're releasing it so everyone can play around with it! Download via `python download_ckpt.py i2v-1k`.
 - [x] We release our **DL3DV video captions** generated with CogVLM. Check them out in [`dl3dv_video_captions`](dl3dv_video_captions).
 - [x] We release the training code for **Wan2.2-TI2V-5B**! Check it out in [`train/Wan2.2-TI2V-5B`](train/Wan2.2-TI2V-5B).
@@ -52,6 +53,7 @@ python download_ckpt.py i2v      # CogVideoX-I2V-5B
 python download_ckpt.py i2v-1k   # CogVideoX-I2V-5B (1K steps, lightweight)
 python download_ckpt.py t2v      # CogVideoX-5B
 python download_ckpt.py t2v15    # CogVideoX1.5-5B
+python download_ckpt.py ti2v     # Wan2.2-TI2V-5B
 ```
 
 ```
@@ -62,7 +64,9 @@ checkpoints/
 │   └── adapter_model.safetensors
 ├── VideoGPA-T2V-lora/
 │   └── adapter_model.safetensors
-└── VideoGPA-T2V1.5-lora/
+├── VideoGPA-T2V1.5-lora/
+│   └── adapter_model.safetensors
+└── VideoGPA-Wan2.2TI2V-lora/
     └── adapter_model.safetensors
 ```
 
@@ -120,6 +124,27 @@ python generate/CogVideoX1.5-5B.py \
     --output_dir outputs/t2v15_dpo \
     --lora_path checkpoints/VideoGPA-T2V1.5-lora
 ```
+
+### Wan2.2-TI2V-5B Text-Image-to-Video
+
+Unlike the CogVideoX scripts, `generate/Wan2.2-TI2V-5B.py` requires `--model_path` pointing to the base [Wan2.2-TI2V-5B](https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B) weights.
+
+```bash
+# Baseline
+python generate/Wan2.2-TI2V-5B.py \
+    --model_path /path/to/Wan2.2-TI2V-5B \
+    --prompt_json prompts.json \
+    --output_dir outputs/ti2v_baseline
+
+# With VideoGPA DPO LoRA (LoRA strength defaults to --lora_weight 0.2)
+python generate/Wan2.2-TI2V-5B.py \
+    --model_path /path/to/Wan2.2-TI2V-5B \
+    --prompt_json prompts.json \
+    --output_dir outputs/ti2v_dpo \
+    --lora_path checkpoints/VideoGPA-Wan2.2TI2V-lora
+```
+
+> **LoRA strength:** both `Wan2.2-TI2V-5B.py` and `CogVideoX1.5-5B.py` apply the LoRA at `--lora_weight 0.2` by default. Pass a different value to tune it.
 
 ### Common Arguments
 

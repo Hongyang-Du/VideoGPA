@@ -56,12 +56,18 @@ def generate(args):
         if not Path(args.lora_path).exists():
             print(f"LoRA path not found: {args.lora_path}, using base model")
         else:
-            print(f"Mounting LoRA: {args.lora_path}")
+            print(f"Mounting LoRA: {args.lora_path} (weight={args.lora_weight})")
             engine.model = PeftModel.from_pretrained(
                 engine.model, args.lora_path,
                 adapter_name="default",
                 torch_dtype=torch.bfloat16,
             )
+            # Scale the LoRA contribution before merging (delta_W *= lora_weight)
+            if args.lora_weight != 1.0:
+                for module in engine.model.modules():
+                    if hasattr(module, "scaling") and isinstance(module.scaling, dict):
+                        for adapter in module.scaling:
+                            module.scaling[adapter] *= args.lora_weight
             engine.model.merge_and_unload()
             print("LoRA merged.")
 
@@ -135,6 +141,7 @@ def main():
     parser.add_argument("--prompt_json", type=str, required=True)
     parser.add_argument("--output_dir", type=str, required=True)
     parser.add_argument("--lora_path", type=str, default=None, help="Path to LoRA weights")
+    parser.add_argument("--lora_weight", type=float, default=0.2, help="LoRA strength relative to trained scaling (1.0 = full; default 0.2)")
     parser.add_argument("--base_dir", type=str, default=None, help="Base dir for relative image paths")
     parser.add_argument("--gpu_id", type=int, default=0)
     parser.add_argument("--seed", type=int, default=42)

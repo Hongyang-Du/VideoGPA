@@ -26,8 +26,13 @@ def generate(args):
         if not os.path.exists(args.lora_path):
             print(f"LoRA path not found: {args.lora_path}, using base model")
         else:
-            print(f"Mounting LoRA: {args.lora_path}")
+            print(f"Mounting LoRA: {args.lora_path} (scaling={args.lora_weight})")
             pipe.transformer = PeftModel.from_pretrained(pipe.transformer, args.lora_path, adapter_name="default")
+            # Override the LoRA scaling to an absolute value before merging
+            for module in pipe.transformer.modules():
+                if hasattr(module, "scaling") and isinstance(module.scaling, dict):
+                    for adapter in module.scaling:
+                        module.scaling[adapter] = args.lora_weight
             pipe.transformer.merge_and_unload()
             print("LoRA merged.")
 
@@ -94,6 +99,7 @@ def main():
     parser.add_argument("--prompt_json", type=str, required=True)
     parser.add_argument("--output_dir", type=str, required=True)
     parser.add_argument("--lora_path", type=str, default=None, help="e.g. checkpoints/VideoGPA-T2V1.5-lora")
+    parser.add_argument("--lora_weight", type=float, default=0.2, help="Absolute LoRA scaling at inference (overrides alpha/r; default 0.2)")
     parser.add_argument("--gpu_id", type=int, default=0)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--num_prompts", type=int, default=None)
