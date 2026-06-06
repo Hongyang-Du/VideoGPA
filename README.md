@@ -25,6 +25,12 @@
 
 
 ## 🔥 News
+- [x] 🏆 **VideoGPA(Wan2.2-TI2V-5B Base Model)** won 🥉 place in the eBay-sponsored **Image-to-Video Consistent Generation Challenge** at CVPR 2026 VGBE Workshop
+
+<div align="center">
+  <img src="cvpr2026_i2v_challenge_award.png" alt="CVPR 2026 Image-to-Video Consistent Generation Challenge Third Place Award" width="70%">
+</div>
+
 - [x] We release the **VideoGPA-Wan2.2-TI2V DPO LoRA** checkpoint! Download via `python download_ckpt.py ti2v` and generate with [`generate/Wan2.2-TI2V-5B.py`](generate/Wan2.2-TI2V-5B.py).
 - [x] We release **VideoGPA-I2V-1K** — we find that only **1,000 steps** already achieves surprisingly strong visual quality and benchmark scores. We're releasing it so everyone can play around with it! Download via `python download_ckpt.py i2v-1k`.
 - [x] We release our **DL3DV video captions** generated with CogVLM. Check them out in [`dl3dv_video_captions`](dl3dv_video_captions).
