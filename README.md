@@ -273,13 +273,20 @@ Thanks to **[Dawei Liu](https://github.com/davidliuk)** for the amazing website 
 ## 🌟 Citation
 
 ```bibtex
-@misc{du2026videogpadistillinggeometrypriors,
-      title={VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation}, 
-      author={Hongyang Du and Junjie Ye and Xiaoyan Cong and Runhao Li and Jingcheng Ni and Aman Agarwal and Zeqi Zhou and Zekun Li and Randall Balestriero and Yue Wang},
-      year={2026},
-      eprint={2601.23286},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2601.23286}, 
+@InProceedings{pmlr-v306-du26q,
+  title = 	 {{V}ideo{GPA}: Distilling Geometry Priors for 3{D}-Consistent Video Generation},
+  author =       {Du, Hongyang and Ye, Junjie and Cong, Xiaoyan and Li, Runhao and Ni, Jingcheng and Agarwal, Aman and Zhou, Zeqi and Li, Zekun and Balestriero, Randall and Wang, Yue},
+  booktitle = 	 {Proceedings of the 43rd International Conference on Machine Learning},
+  pages = 	 {26797--26832},
+  year = 	 {2026},
+  editor = 	 {Zhang, Tong and Dudik, Miroslav and Jaggi, Martin and Agarwal, Alekh and Li, Sharon and Schuurmans, Dale and Zhu, Jerry and Berkenkamp, Felix and Dong, Hanze and Bietti, Alberto},
+  volume = 	 {306},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {06--11 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://raw.githubusercontent.com/mlresearch/v306/main/assets/du26q/du26q.pdf},
+  url = 	 {https://proceedings.mlr.press/v306/du26q.html},
+  abstract = 	 {While recent video diffusion models (VDMs) produce visually impressive results, they fundamentally struggle to maintain 3D structural consistency, often resulting in object deformation or spatial drift. We hypothesize that these failures arise because standard denoising objectives lack explicit incentives for geometric coherence. To address this, we introduce VideoGPA (Video Geometric Preference Alignment), a data-efficient self-supervised framework that leverages a geometry foundation model to automatically derive dense preference signals that guide VDMs via Direct Preference Optimization (DPO). This approach effectively steers the generative distribution toward inherent 3D consistency without requiring human annotations. VideoGPA significantly enhances temporal stability, geometric plausibility, and motion coherence using minimal preference pairs, consistently outperforming state-of-the-art baselines in extensive experiments.}
 }
+
 ```
